@@ -5,8 +5,15 @@ fetch("https://kea-alt-del.dk/t5/api/categories")
     .then(displayCategories)
 
 function displayCategories(data) {
-//    console.log(data)
+    //    console.log(data)
     data.forEach(function (eachItem) {
+
+        const a = document.createElement("a");
+        a.setAttribute("href", `#${eachItem}`);
+        a.textContent = eachItem;
+        document.querySelector("#top-nav").appendChild(a);
+
+
 
         const section = document.createElement("section");
         section.id = eachItem;
@@ -15,7 +22,7 @@ function displayCategories(data) {
         section.appendChild(h2);
         document.querySelector("main").appendChild(section);
     })
-showProducts();
+    showProducts();
 
 }
 
@@ -31,13 +38,13 @@ function showProducts() {
 
     function uploadData(onlineDatabase) {
         onlineDatabase.forEach(showData)
-//        console.log(onlineDatabase)
+        //        console.log(onlineDatabase)
 
     }
 }
 
 function showData(jsonDatabase) {
-//        console.log(jsonDatabase, "this is single data")
+    //        console.log(jsonDatabase, "this is single data")
     const template = document.querySelector("#saleItems").content;
     const clone = template.cloneNode(true);
 
@@ -45,10 +52,10 @@ function showData(jsonDatabase) {
     clone.querySelector("h3 span").textContent = jsonDatabase.price;
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
     clone.querySelector(".discount").textContent = jsonDatabase.discount;
-//        clone.querySelector("img").src=heroDatabase.selfie;
+    //        clone.querySelector("img").src=heroDatabase.selfie;
 
-//    const parent = document.querySelector("main");
-//    document.querySelector("main").appendChild(clone)
+    //    const parent = document.querySelector("main");
+    //    document.querySelector("main").appendChild(clone)
 
     console.log(`#${jsonDatabase.category}`)
     document.querySelector(`#${jsonDatabase.category}`).appendChild(clone);
