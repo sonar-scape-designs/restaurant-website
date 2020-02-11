@@ -36,9 +36,6 @@ article {
         margin: 0;
     }
 
-    article {
-        margin: 0;
-    }
 
     header {
         display: grid;
@@ -50,13 +47,18 @@ article {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         grid-gap: 1rem;
+         grid-auto-flow: row;
     }
 }
 
 
 article {
     display: flex;
-    flex-flow: column;
+    flex-flow:column;
+    margin: 1rem;
+    padding: 1rem;
+    align-items: center
+
 
 }
 
@@ -72,10 +74,7 @@ img {
 }
 
 
-article {
-    padding: 2rem;
-    align-items: center;
-}
+
 
 
 h1 {
