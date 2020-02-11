@@ -52,7 +52,7 @@ function showData(jsonDatabase) {
     clone.querySelector("h3 span").textContent = jsonDatabase.price;
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
     clone.querySelector(".discount").textContent = jsonDatabase.discount;
-    //        clone.querySelector("img").src=heroDatabase.selfie;
+    //        clone.querySelector("img").src=jsonDatabase.image;
 
     //    const parent = document.querySelector("main");
     //    document.querySelector("main").appendChild(clone)

@@ -5,34 +5,38 @@ body {
     padding: 1rem 2rem 2rem 0;
     font-family: 'Roboto', sans-serif;
     background-image: url(/images/wood-1130494_1920.jpg);
-    /*    background-color: #D9CDBF;*/
+    /*        background-color: #D9CDBF;*/
 
 }
 
+/*text styling*/
 
 
-/*
-.sidebar {
-     display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-        grid-gap: 1rem;
-}
-*/
-
-
-
-#side-nav {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    grid-gap: 1rem;
-    position: fixed;
-    width: 10rem;
-    height: 100%;
-    margin: 0%;
-    background-color: #f1692b;
+h1 {
+    color: #262626;
+    font-size: 2em;
+    margin: 0;
 }
 
+h2 {
+    color: aliceblue;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 0;
+    background-color: #232020;
+}
 
+h3 {
+    color: black;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 0;
+}
+
+
+/*element styling*/
 
 main {
     max-width: 500px;
@@ -50,14 +54,6 @@ main {
     }
 
 
-    /*
-    header {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        grid-gap: 1rem;
-    }
-*/
-
     main {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -72,13 +68,29 @@ article {
     flex-flow: column;
     padding: 1rem;
     margin: 1rem 0 0 0;
-    align-items: center
+    align-items: center;
+    background-color: #f4f4f4;
+    /*    border: solid thin #3a3535;*/
 }
 
 article > img {
     order: -1;
     align-self: center;
+
 }
+
+#side-nav {
+
+    grid-gap: 1rem;
+    position: fixed;
+    width: 15rem;
+    height: 100%;
+    margin: 0%;
+    background-color: #f1692b;
+}
+
+
+
 
 img {
     max-width: 100%;
@@ -87,19 +99,11 @@ img {
 
 
 
-h1 {
-    color: #262626;
-    font-size: 2em;
-    margin: 0;
-}
-
-h2 {
-    color: aliceblue;
-    text-align: center;
+#readmore {
     padding: 0.5rem;
     font-size: 1em;
     margin: 0;
-    background-color: #6a6667;
+    background-color: #f1692b;
 }
 
 /* sold out items styling
@@ -120,7 +124,8 @@ h2 {
 
     grid-column: 1/-1;
     text-align: center;
-    background-color: #445925;
+    background-color: #6a6667;
+
     overflow: hidden;
     display: inline-block;
     padding: 0.5rem;
@@ -133,9 +138,6 @@ nav ul {
 }
 
 
-a {
-     font-family: 'Roboto', sans-serif;
-}
 
 nav a {
 
@@ -143,13 +145,14 @@ nav a {
     text-align: center;
     padding: 0.5rem;
     font-size: 1em;
+    font-weight: 300;
     margin: 0;
     text-decoration: none;
 
 }
 
 
-/*styling not working on database link in top nav*/
+/*styling does not work on database link in top nav*/
 #top-nav,
 li,
 a.active {
@@ -168,7 +171,7 @@ a:hover:not(.active) {
 
 p {
     margin: 0.25em 1rem 1rem;
-    color: aliceblue;
+    color: black
 }
 
 main {
@@ -177,10 +180,7 @@ main {
     margin-left: 16rem;
 }
 
-article {
-    background-color: #282923;
 
-}
 
 article > button {
 
