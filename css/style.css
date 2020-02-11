@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
+
+
+body {
+    padding: 1rem 2rem 2rem 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #D9CDBF;
+
+}
+
+
+.sidebar {
+    display: flex;
+    position: fixed;
+    width: 10rem;
+    height: 100%;
+    background-color: #F26D3D;
+}
+
+
+
+main {
+    max-width: 500px;
+    margin: 0 auto;
+    color: aliceblue;
+}
+
+article {
+    margin: 1rem 0;
+}
+
+/* CSS that applies to browsers that support grid */
+@supports (display: grid) {
+    main {
+        max-width: none;
+        margin: 0;
+    }
+
+    article {
+        margin: 0;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+}
+
+
+article {
+    display: flex;
+    flex-flow: column;
+
+}
+
+article > img {
+    order: -1;
+    align-self: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+
+article {
+    padding: 2rem;
+    align-items: center;
+}
+
+
+h1 {
+    color: #262626;
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    color: aliceblue;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 2em;
+    margin: 0;
+    background-color: #BF7B54;
+}
+
+.sold-out {
+    background-color: aliceblue;
+    color: black;
+    font-size: 1.5em;
+    font-weight: 800;
+    position: relative;
+    bottom: 45%;
+    padding: 0 8rem;
+
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li a {
+    text-decoration-line: none;
+    color: #262626;
+    line-height: 2;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    color: white;
+}
+
+
+article > p {
+    margin: 0.25em 1rem 1rem;
+    color: aliceblue;
+}
+
+main {
+    font-family: 'Roboto', sans-serif;
+    font-size: 80%;
+    margin-left: 16rem;
+}
+
+article {
+    background-color: #445925;
+
+}
+
+article > button {
+
+    background: #8BA651;
+    color: white;
+    padding: 0;
+    border: none;
+
+    font-size: 1.2rem;
+}
+
+.section-title {
+    grid-column: 1/-1;
+
+}
