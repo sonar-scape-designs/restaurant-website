@@ -47,16 +47,18 @@ main {
 
 
 /* CSS that applies to browsers that support grid */
+/*
 @supports (display: grid) {
     main {
         max-width: none;
         margin: 0;
     }
+*/
 
 
     main {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 3fr));
         grid-gap: 1rem;
         grid-auto-flow: row;
     }
@@ -80,7 +82,7 @@ article > img {
 }
 
 #side-nav {
-
+display: grid;
     grid-gap: 1rem;
     position: fixed;
     width: 15rem;
