@@ -52,7 +52,16 @@ function showData(jsonDatabase) {
     clone.querySelector("h3 span").textContent = jsonDatabase.price;
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
     clone.querySelector(".discount").textContent = jsonDatabase.discount;
-    //        clone.querySelector("img").src=jsonDatabase.image;
+
+       if (jsonDatabase.discount) {
+        clone.querySelector(".discount").textContent = jsonDatabase.price;
+        const newPrice = Math.round(jsonDatabase.price - jsonDatabase.price * jsonDatabase.discount / 100);
+        clone.querySelector(".original").textContent = newPrice;
+    } else {
+        clone.querySelector(".discount").remove()
+        clone.querySelector(".original").textContent = jsonDatabase.price;
+    }
+
 
     //    const parent = document.querySelector("main");
     //    document.querySelector("main").appendChild(clone)
