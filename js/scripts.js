@@ -57,6 +57,15 @@ function showData(jsonDatabase) {
     //    const parent = document.querySelector("main");
     //    document.querySelector("main").appendChild(clone)
 
+
+
+    const imageName = jsonDatabase.image; // this would be dynamic
+    const base = "https://kea-alt-del.dk/t5/site/imgs/";
+    const smallImg = base + "small/" + imageName + "-sm.jpg";
+    const mediumImg = base + "medium/" + imageName + "-md.jpg";
+    const largeImg = base + "large/" + imageName + ".jpg";
+    clone.querySelector("img").src = smallImg;
+
     console.log(`#${jsonDatabase.category}`)
     document.querySelector(`#${jsonDatabase.category}`).appendChild(clone);
 }
