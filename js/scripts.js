@@ -20,6 +20,7 @@ function displayCategories(data) {
         const h2 = document.createElement("h2");
         h2.textContent = eachItem;
         section.appendChild(h2);
+
         document.querySelector("main").appendChild(section);
     })
     showProducts();
@@ -48,6 +49,7 @@ function showData(jsonDatabase) {
     const template = document.querySelector("#saleItems").content;
     const clone = template.cloneNode(true);
 
+//    clone.querySelector("h1").textContent = jsonDatabase.category;
     clone.querySelector("h2").textContent = jsonDatabase.name;
     clone.querySelector("h3 span").textContent = jsonDatabase.price;
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
