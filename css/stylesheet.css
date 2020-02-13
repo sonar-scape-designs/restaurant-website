@@ -7,13 +7,22 @@ p {
 
 h1 {
     color: #262626;
-    font-size: 2em;
+
     margin: 0;
 }
 
 h2 {
-    display: flex;
-    flex: 100%;
+
+    color: aliceblue;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 0;
+    background-color: #232020;
+}
+
+#dish-name {
     color: aliceblue;
     text-align: center;
     padding: 0.5rem;
@@ -46,23 +55,12 @@ header {
     margin-bottom: 1rem;
 }
 
-/*
-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-*/
 
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 1rem;
-    grid-auto-flow: row;
-}
 
 aside {
     background-color: #f1692b;
     height: auto;
+    padding: 1rem;
 }
 
 section > h2 {
@@ -98,6 +96,24 @@ section > h2 {
     color: White;
 }
 
+a {
+    /*    display: inline-block;*/
+
+    padding: 0 1rem 0 0;
+    margin: rem;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+}
+
+
+#top-nav {
+    margin: 0.5rem;
+}
+
 
 footer {
     background-color: #01579b;
@@ -118,13 +134,31 @@ main {
     grid-area: main;
 }
 
+main > section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+}
+
 aside {
+    width: 13vw;
     grid-area: aside;
     position: fixed;
+    grid-template-columns: repeat(2, 1fr);
+
 }
 
 footer {
     grid-area: footer;
+    background-color: #1492FF;
+    height: auto;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem;
 }
 
 
@@ -147,7 +181,20 @@ img {
 }
 
 
-/* MEDIA SPECIFIC GRID LAYOUT */
+button {
+    position: relative;
+    bottom: 0;
+    background: #8BA651;
+    color: white;
+    padding: 0;
+    border: none;
+
+    font-size: 1.2rem;
+}
+
+
+
+
 @media only screen and (min-width: 900px) {
     body {
         display: grid;
@@ -157,19 +204,4 @@ img {
             "aside . main main "
             "footer footer footer footer";
     }
-}
-
-/*mobile phone*/
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-/*
-    body {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "header"
-            "main "
-            "aside"
-            "footer";
-    }
-*/
 }
