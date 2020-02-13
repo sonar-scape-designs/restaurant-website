@@ -1,0 +1,175 @@
+/* GENERAL STYLES */
+
+p {
+    margin: 0.25em 1rem 1rem;
+    color: black
+}
+
+h1 {
+    color: #262626;
+    font-size: 2em;
+    margin: 0;
+}
+
+h2 {
+    display: flex;
+    flex: 100%;
+    color: aliceblue;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 0;
+    background-color: #232020;
+}
+
+h3 {
+    color: black;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1em;
+    margin: 0;
+}
+
+body {
+    font-family: "Verdana", sans-serif;
+    color: #fff;
+    margin: 1em;
+    background-image: url(/images/wood-1130494_1920.jpg);
+}
+
+
+/* Body content colours and other styling here */
+
+header {
+    background-color: #f46524;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/*
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+*/
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+    grid-auto-flow: row;
+}
+
+aside {
+    background-color: #f1692b;
+    height: auto;
+}
+
+section > h2 {
+    grid-column: 1/-1;
+}
+
+
+#side-menu {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 13px;
+    color: #717171;
+    width: 100%;
+}
+
+#side-menu li {
+    border-bottom: 1px solid #eeeeee;
+    padding: 7px 10px 7px 10px;
+}
+
+#side-menu li:hover {
+    color: White;
+    background-color: #ffcc00;
+}
+
+#side-menu a:link {
+    color: #717171;
+    text-decoration: none;
+}
+
+#side-menu a:hover {
+    color: White;
+}
+
+
+footer {
+    background-color: #01579b;
+}
+
+body {
+
+    background-color: #dde;
+}
+
+/* Grid area names defined here */
+header {
+    grid-area: header;
+}
+
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+    position: fixed;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+article {
+
+    display: flex;
+    flex-flow: column;
+    padding: 0 1rem 1rem 1rem;
+    margin: 0 1rem 1rem 1rem;
+    align-items: center;
+    background-color: #f4f4f4
+        /*    border: solid thin #3a3535;*/
+}
+
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* MEDIA SPECIFIC GRID LAYOUT */
+@media only screen and (min-width: 900px) {
+    body {
+        display: grid;
+        grid-template-columns: 1fr 20px 5fr;
+        grid-template-areas:
+            "aside . header header"
+            "aside . main main "
+            "footer footer footer footer";
+    }
+}
+
+/*mobile phone*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/*
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main "
+            "aside"
+            "footer";
+    }
+*/
+}
