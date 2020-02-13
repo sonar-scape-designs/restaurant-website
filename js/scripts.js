@@ -1,3 +1,9 @@
+const modal = document.querySelector(".modal-background");
+modal.addEventListener("click", () => {
+    modal.classList.add("hide");
+});
+
+
 fetch("https://kea-alt-del.dk/t5/api/categories")
     .then(function (display) {
         return display.json()
@@ -49,13 +55,13 @@ function showData(jsonDatabase) {
     const template = document.querySelector("#saleItems").content;
     const clone = template.cloneNode(true);
 
-//    clone.querySelector("h1").textContent = jsonDatabase.category;
+    //    clone.querySelector("h1").textContent = jsonDatabase.category;
     clone.querySelector("h2").textContent = jsonDatabase.name;
     clone.querySelector("h3 span").textContent = jsonDatabase.price;
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
     clone.querySelector(".discount").textContent = jsonDatabase.discount;
 
-       if (jsonDatabase.discount) {
+    if (jsonDatabase.discount) {
         clone.querySelector(".discount").textContent = jsonDatabase.price;
         const newPrice = Math.round(jsonDatabase.price - jsonDatabase.price * jsonDatabase.discount / 100);
         clone.querySelector(".original").textContent = newPrice;
@@ -77,6 +83,28 @@ function showData(jsonDatabase) {
     const largeImg = base + "large/" + imageName + ".jpg";
     clone.querySelector("img").src = smallImg;
 
+
+
+    //    button function
+
+    clone.querySelector("button").addEventListener("click", () => {
+        console.log("click", jsonDatabase)
+        fetch(`https://kea-alt-del.dk/t5/api/product?id=${jsonDatabase.id}`)
+            .then(res => res.json())
+            .then(showDetails);
+    });
+
+
     console.log(`#${jsonDatabase.category}`)
     document.querySelector(`#${jsonDatabase.category}`).appendChild(clone);
+}
+
+
+
+function showDetails(data) {
+    modal.querySelector(".modal-name").textContent = data.name;
+    modal.querySelector(".modal-description").textContent = data.longdescription;
+    modal.querySelector(".modal-price").textContent = data.price;
+    //...
+    modal.classList.remove("hide");
 }
