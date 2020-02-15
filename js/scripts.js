@@ -45,38 +45,57 @@ function showProducts() {
 
     function uploadData(onlineDatabase) {
         onlineDatabase.forEach(showData)
-        //        console.log(onlineDatabase)
+
 
     }
 }
 
 function showData(jsonDatabase) {
-    //        console.log(jsonDatabase, "this is single data")
+
     const template = document.querySelector("#saleItems").content;
     const clone = template.cloneNode(true);
 
-    //    clone.querySelector("h1").textContent = jsonDatabase.category;
+
     clone.querySelector("h2").textContent = jsonDatabase.name;
-    clone.querySelector("h3 span").textContent = jsonDatabase.price;
+    clone.querySelector(".solution").textContent = jsonDatabase.price;
+    clone.querySelector(".money").textContent = "DKK";
     clone.querySelector("p").textContent = jsonDatabase.shortdescription;
-    clone.querySelector(".discount").textContent = jsonDatabase.discount;
+    clone.querySelector(".discount span").textContent = jsonDatabase.discount;
+
 
     if (jsonDatabase.discount) {
-        clone.querySelector(".discount").textContent = jsonDatabase.price;
+        clone.querySelector(".solution2 ").textContent = jsonDatabase.price;
         const newPrice = Math.round(jsonDatabase.price - jsonDatabase.price * jsonDatabase.discount / 100);
-        clone.querySelector(".original").textContent = newPrice;
+        clone.querySelector(".solution").textContent = newPrice;
+            clone.querySelector(".money2").textContent = "DKK";
+
     } else {
-        clone.querySelector(".discount").remove()
-        clone.querySelector(".original").textContent = jsonDatabase.price;
+            clone.querySelector(".discount").remove();
+        //clone.querySelector(".original").textContent = jsonDatabase.price;
+    }
+
+    if(jsonDatabase.vegetarian == true){
+        clone.querySelector(".v-icon").classList.remove("hidden");
+         clone.querySelector(".veggie").textContent = "Vegetarian";
+    }
+    else {
+        clone.querySelector(".v-icon").classList.add("hidden");
     }
 
 
-    //    const parent = document.querySelector("main");
-    //    document.querySelector("main").appendChild(clone)
+     if(jsonDatabase.soldout == true){
+        clone.querySelector(".sold-out").classList.remove("hidden");
+          clone.querySelector(".sold-out-text").textContent = ("Sold Out");
+    }
+    else {
+        clone.querySelector(".sold-out").classList.add("hidden");
+    }
 
 
 
-    const imageName = jsonDatabase.image; // this would be dynamic
+
+
+    const imageName = jsonDatabase.image;
     const base = "https://kea-alt-del.dk/t5/site/imgs/";
     const smallImg = base + "small/" + imageName + "-sm.jpg";
     const mediumImg = base + "medium/" + imageName + "-md.jpg";
@@ -100,7 +119,6 @@ function showData(jsonDatabase) {
 }
 
 
-
 function showDetails(data) {
     modal.querySelector(".modal-name").textContent = data.name;
     modal.querySelector(".modal-description").textContent = data.longdescription;
@@ -108,3 +126,5 @@ function showDetails(data) {
     //...
     modal.classList.remove("hide");
 }
+
+

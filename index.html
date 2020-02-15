@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Restaurant Menu</title>
+    <title>Restaurant Petrograd API</title>
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
@@ -15,6 +15,7 @@
             <a href="index.html">Home</a>
 
         </nav>
+
     </header>
     <main>
 
@@ -22,49 +23,81 @@
 
             <article class="sale-item">
 
-                <img src="images/ring-bread-ex.jpg">
+                <img>
                 <h2 id="dish-name"></h2>
-                <h3 class="price original"><span></span>KR</h3>
-                <h3 class="price discount"><span></span>%</h3>
-
+                <h3 class="price original"><span class="solution">price</span><span class="money">DKK</span></h3>
+                <h3 class="price discount"><span class="solution2"></span><span class="money2"></span></h3>
+                <div class="v-icon">
+                   <h5 class="veggie"></h5>
+                </div>
                 <p></p>
+                <div class="sold-out">
+                <h6 class="sold-out-text"></h6>
+                </div>
                 <button id="readmore">Read More</button>
             </article>
         </template>
+
 
     </main>
 
     <aside>
         <h1>Restaurant Petrograd API</h1>
         <ul id="side-menu">
-            <li><a href="#">Reviews</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-
+            <li><a href="#about">About</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+
+
+
     </aside>
 
 
     <div data-brackets-id='72' class="modal-background hide">
         <div data-brackets-id='73' class="modal-content">
             <h2 data-brackets-id='74' class="modal-name">name</h2>
-               <h3 data-brackets-id='77' class="modal-price">price</h3>
-                <p data-brackets-id='76' class="modal-description">LONG DESCRIPTION</p>
+            <h3 data-brackets-id='77' class="modal-price">price</h3>
+            <p data-brackets-id='76' class="modal-description">LONG DESCRIPTION</p>
             <img data-brackets-id='75' src="" alt="" class="modal-image" />
-
-
-
         </div>
     </div>
 
-    <footer>
-        this is footer stuff
 
+    <footer>
+        <div class="footer-left">
+            <h2 id="about">Restaurant Petrograd API</h2>
+            <p> Find the best food here with a variety of options for every taste and dietary needs. Here at Restaurant Petrograd API, we offer authentic ingredients for classic Russian dishes. </p>
+        </div>
+
+        <div class="footer-middle">
+            <div>
+                <h2 id="reviews">Reviews</h2>
+                <div>
+                    <p> Best place I've ever eaten. Im so pleased. </p>
+                </div>
+                <div>
+                    <p> I highly recommend this place. Vegetarian options are amazing!</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-right">
+            <div>
+                <h2 id="contact">Contact</h2>
+                <div>
+                    <p><a href="mailto:support@company.com">food@petrogradapi.com</a></p>
+                </div>
+                <div>
+                    <p>+45 265 458 845</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
+
 </body>
-
-
 
 
 <script src="js/scripts.js"></script>
